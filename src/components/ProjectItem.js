@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectList from "./ProjectList";
 
 function ProjectItem({ name, about, technologies }) {
   return (
@@ -6,6 +7,13 @@ function ProjectItem({ name, about, technologies }) {
       <h3>{name}</h3>
       <p>{about}</p>
       <div className="technologies">
+  {technologies.map((technology, index)=>(
+              <span key={index} className="technology">
+                {technology}
+                </span>
+            )
+            )
+  }
         {/* render a <span> for each technology in the technologies array */}
       </div>
     </div>
